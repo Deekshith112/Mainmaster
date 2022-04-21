@@ -5,13 +5,13 @@ pipeline {
         stage('checkout') {
             steps {
                 echo 'chking outt'
-                git branch: 'main', credentialsId: 'github_creds', url: 'https://github.com/Siddhartha-chaki/DockerLeanings.git'
+                git branch: 'main', credentialsId: 'Deekshith112', url: 'https://github.com/Deekshith112/Mainmaster.git'
             }
         }
         stage('paybook execution') {
             steps {
                 echo 'executing playbook'
-                ansiblePlaybook credentialsId: 'slv1_auth', disableHostKeyChecking: true, installation: 'ansible1', inventory: 'inventory.ini', playbook: 'playbook.yml'
+                ansiblePlaybook credentialsId: 'Deekshith', disableHostKeyChecking: true, installation: 'ansible1', inventory: 'inventory.ini', playbook: 'playbook.yml'
             }
         }
     }
